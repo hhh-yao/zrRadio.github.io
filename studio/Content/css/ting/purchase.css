@@ -1,0 +1,610 @@
+/* 官网套餐购买页 css start */
+.tingPurchase{
+  background: #E8F1FE;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.tingPurchase p,h1,h3{
+    margin:0;
+    padding:0;
+}
+.tingPurchase .purchaseTitle{
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+.tingPurchase .purchaseTitle h1{
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 40px;
+}
+.tingPurchase .purchaseTitle h3{
+    font-size: 24px;
+    line-height: 24px;
+    margin-top: 30px;
+    font-weight: normal;
+    opacity: 0.75;
+}
+.tingPurchase .tingPurchaseBgBox{
+    margin:0 auto;
+    min-height:785px;
+}
+.tingPurchase .tingPurchaseBg{
+    width:100%;
+    height:540px;
+    background: url('//static.frdic.com/web/ting/ting_purchase_bg.jpg') no-repeat;
+    background-position: center;
+    background-color:#3274FA;
+}
+.tingPurchase .packageBox{
+    position: relative;
+    text-align: center;
+    width: 280px;
+    height: 500px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px 0 rgba(50,109,230,0.15);
+}
+.tingPurchase #ting-forfait{
+    text-align: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    margin-top:80px;
+}
+.tingPurchase #ting-forfait a:first-child{
+    margin-right: 30px;
+}
+.tingPurchase #ting-forfait a:last-child{
+    margin-left: 30px;
+}
+
+.tingPurchase .price_num{
+    font-size: 28px;
+    color: #333333;
+    letter-spacing: 0;
+    line-height: 42px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+.tingPurchase .price_un,.tingPurchase .p_text{
+    font-size: 14px;
+    color: #666666;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+.tingPurchase .packgetBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:140px;
+    height:40px;
+    border-radius: 4px;
+    font-size: 16px;
+    letter-spacing: 0;
+    position: absolute;
+    bottom:30px;
+    left:50%;
+    margin-left:-70px;
+}
+.tingPurchase .btnColor{
+    background: #E8F1FE;
+    color: #3274FA;
+}
+.tingPurchase .btnColorActive{
+    background: #3274FA;
+    color:#fff;
+}
+.tingPurchase .btnColor:hover,.downloadPurchase .downBtn:hover{
+    opacity: 0.75;
+}
+.tingPurchase .btnColorActive:hover{
+    opacity: 0.75;
+    background: #3274FA;
+}
+.tingPurchase #ting-forfait a:hover{
+    text-decoration: none;
+}
+.tingPurchase .packageIcon{
+    padding-top: 40px;
+}
+.tingPurchase .packageIcon img{
+   width:51px;
+   height:40px;
+}
+.tingPurchase .p_active_txt{
+    font-size: 14px;
+    color: #3274FA;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 26px;
+}
+.tingPurchase .p_price{
+  margin-top:10px;
+  margin-bottom: 20px;
+}
+
+.tingPurchase .tipPackage{
+    text-align: center;
+    margin-top:20px;
+    margin-bottom:60px;
+    font-size: 14px;
+    color: #999999;
+    letter-spacing: 1px;
+    line-height: 21px;
+}
+
+.downloadPurchase{
+    width: 900px;
+    height: 96px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+}
+.downloadPurchase .logoImg{
+    width: 50px;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+.downloadPurchase .logoImg img{
+    width:50px;
+    height:50px;
+}
+.downloadPurchase>div{
+    display: flex;
+    align-items: center;
+    height:100%;
+}
+.downloadPurchase .downBtn{
+    width: 140px;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 16px;
+    letter-spacing: 0;
+    color: #3274FA;
+    background: #E8F1FE;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-top: -20px;
+    cursor: pointer;
+}
+.downloadPurchase .downDetail{
+    font-size: 18px;
+    color: #333333;
+    margin-left: 8px;
+    flex-wrap: wrap;
+    height: 50px;
+    margin-top: 23px;
+}
+.downloadPurchase .downDspan{
+  font-size: 14px;
+  margin-left:10px;
+}
+.downloadPurchase .downDetail>span{
+    display: block;
+    width:100%;
+}
+.modalTingPurBox{
+    margin:auto;
+    min-height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999998;
+    bottom:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modalTingPurBox a{
+    text-decoration: none;
+}
+.modalTingPurBox .modalTingPurCon{
+    width:840px;
+    height:515px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    margin:auto;
+
+}
+.modalTingPurBox .xiazai{
+    margin-left:-14px;
+    font-size: 12px;
+}
+.modalTingPurBox .windown{
+    margin-left: -48px;
+}
+.modalTingPurBox .xiazaiIpad{
+    margin-left:-69px;
+    font-size: 12px;
+}
+.modalTingPurBox .xiazaiAnd{
+    margin-left:-42px;
+    font-size: 12px;
+}
+.modalTingPurBox .modalTingPurGreyBg{
+    background: rgba(0, 0, 0, 0.5);
+    margin:auto;
+    min-height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    bottom:0;
+    left:0;
+}
+.modalTingPurBox .modalTitle{
+    font-size: 24px;
+    color: #333333;
+    text-align: center;
+    margin-top: 40px;
+}
+.modalTingPurBox .modalClose{
+    position: absolute;
+    top:20px;
+    right:20px;
+    cursor: pointer;
+}
+.modalTingPurBox .UldownLink{
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+}
+.modalTingPurBox .lidownLink{
+    width: 240px;
+    height: 362px;
+    border-radius: 4px;
+    padding: 30px;
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid #DDDDDD;
+}
+.modalTingPurBox .lidownLink:first-child{
+    margin-right:20px;
+}
+.modalTingPurBox .lidownLink:last-child{
+    margin-left:20px;
+}
+.modalTingPurBox .modalBtn{
+    width: 180px;
+    height: 50px;
+    opacity:1;
+    background: #3274FA;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+}
+
+#tingdownloadPay.modalTingPurBox .modalBtn,
+#dictdownloadPay.modalTingPurBox .modalBtn{
+    background: #C9922A;
+}
+#tingdownloadPay.modalTingPurBox .codeImg,
+#dictdownloadPay.modalTingPurBox .codeImg{
+    border: 2px solid #C9922A;
+}
+.modalTingPurBox .modalBtnIcon{
+    margin-left:20px;
+    margin-right: 14px;
+    display: flex;
+    align-items: center;
+}
+.modalTingPurBox .modalBtnIcon img{
+   width:30px;
+   height:30px;
+}
+.modalTingPurBox .linkSat{
+    font-size: 16px;
+    color: #333333;
+    margin:31px 0;
+}
+.modalTingPurBox .linkTingBtn .modalBtn:last-child{
+    margin-top:9px;
+}
+.modalTingPurBox .linkTingBtn .modalBtn:hover{
+    opacity: 0.75;
+}
+.modalTingPurBox .codeImg{
+    border: 2px solid #3274FA;
+    border-radius: 4px;
+    padding:2px;
+    width: 108px;
+    height: 108px;
+    box-sizing: border-box;
+}
+.contactTingPurchase{
+    position: fixed;
+    z-index: 9;
+    bottom: 50px;
+    right:10px;
+}
+.contactTingPurchase>div{
+    cursor: pointer;
+}
+.contactTingPurchase>div,
+.contactTingPurchase .textContact,
+.modalTingPurBox .lidownLink,
+.modalTingPurBox .modalClose{
+    font-size: initial;
+}
+.contactTingPurchase .textContact{
+   margin-bottom:5px;
+}
+.contactTingPurchase .textContact img,.contactTingPurchase .phoneContact img{
+    width:44px;
+    height:44px;
+ }
+.phoneContactBox{
+    position: relative;
+}
+.phoneContactCon{
+    position: absolute;
+    right: 100%;
+    bottom: 0;
+    padding-right: 20px;
+}
+.phoneContactMin{
+    width: 160px;
+    height: 73px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.10);
+    border-radius: 4px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.phoneContactMin img{
+    width:20px;
+    height:20px;
+}
+
+.contactTingPurchase .feedback{
+    width: 120px;
+    height:30px;
+    background: #3173FA;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.desktopStyle.contactTingPurchase .feedback{
+    background: #C9922A;
+}
+.contactTingPurchase .min_cont{
+    font-size: 14px;
+    color: #333333;
+}
+.contactTingPurchase .min_cont img{
+    vertical-align: bottom;
+    margin-right: 14px;
+}
+.contactTingPurchase  .min_cont_qq{
+    margin:23px 0;
+}
+.emptyDivTing{
+    width:100%;
+    height:80px;
+}
+.kf5-chatSupport-btn{
+    display: none;
+}
+.tingPurchase .recmomedIcon{
+    position: absolute;
+    right: -1px;
+    top: 0;
+}
+.tingPurchase .recmomedIcon img{
+  width:56px;
+  height:55px;
+  border-top-right-radius: 4px;
+}
+.modalTingPurBox .linkImg img{
+    width:60px;
+    height:60px;
+}
+#footer{
+ padding-top:0;
+}
+#third-login li{
+    width:79px;
+}
+iframe {
+    display: block;
+}
+/* old css start */
+#redeem-div {
+    margin: 40px auto;
+    width: 850px;
+}
+#redeem-content {
+    padding-left: 230px;
+    background: url('//static.frdic.com/web/ting-@DictResource.GetText("lang")-smile.png') no-repeat;
+    padding-bottom: 20px;
+}
+#redeem-success-content {
+    padding-left: 150px;
+    margin-left: 50px;
+    background: url('http://www.francochinois.com/image/payok.gif') no-repeat;
+    padding-bottom: 20px;
+}
+
+ #CaptchaInputText {
+     width: 200px;
+     height: 33px;
+     border: 1px solid #ccd1d5;
+     line-height: 33px;
+     display: block;
+     border-radius: 3px;
+     padding-left: 10px;
+     padding-right: 10px;
+     font-size: 17px;
+ }
+ #captcha-div #title {
+     font-weight: bold;
+     font-size: 12px;
+     padding-bottom: 5px;
+     color: #565656;
+ }
+ #captcha-div {
+     height: 60px;
+ }
+ #redeem-form {
+     margin-left: 20px;
+ }
+ #serial-code {
+     font-size: 25px;
+     width: 420px;
+ }
+ .hint {
+     color: gray;
+     font-size: 12px;
+     width: 800px;
+     margin-top: 50px;
+ }
+ #download-line,#contact-line {
+     text-align: center;
+     padding: 5px 10px 15px 30px;
+     background: url('//static.frdic.com/app/icon/ting_@DictResource.GetText("lang")_48.png') no-repeat;
+     height: 50px;
+     width: 350px;
+     background-size: 48px;
+     display: inline-block;
+
+ }
+ #contact-line {
+     background: url('http://www.eudic.net/image/phone-green.gif') no-repeat;
+     background-size: 48px;
+ }
+ #links a {
+    text-decoration: none;
+    color: #02cafc;
+    font-size: 18px;
+}
+#links a:active {
+    text-decoration: underline;
+    color: #02cafc;
+}
+ .section {
+     width: 850px;
+     margin: 50px auto;
+     margin-bottom: 14px;
+     border: 1px solid #E7E8E9;
+     border-radius: 3px;
+     background-color: white;
+     padding: 28px 0 0 22px;
+     text-align: center;
+ }
+ /* old css end */
+
+/* 官网套餐购买页 css end */
+.modalTingPurBox .modalLinuxIcon,
+.modalTingPurBox .modalLinuxArrow,
+.linuxUl li .AppImageBtn img,
+.linuxUl li .debBtn img{
+    margin-left: 20px;
+    margin-right: 14px;
+}
+.modalTingPurBox .modalLinuxIcon,
+.linuxUl li .AppImageBtn,
+.linuxUl li .debBtn{
+    align-items: center;
+    display: flex;
+}
+.modalTingPurBox .modalLinuxIcon img{
+    width:30px;
+    height:30px;
+}
+.modalTingPurBox  .modalLinuxArrow img{
+    width:10px;
+    height:6px;
+}
+.modalBtn .leftLinux{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    height: 100%;
+}
+.linuxBox{
+margin-top:9px;
+}
+.linuxBox .linuxUl{
+    display: none;
+    width: 100%;
+    background: #fff;
+    border-radius: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    margin-top: 10px;
+}
+.linuxUl li a{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    color:#000;
+}
+.linuxUl li .AppImageBtn img{
+    width:24px;
+    height:24px;
+}
+.linuxUl li .debBtn img{
+    width:22px;
+    height:24px;
+}
+.linuxUl .line{
+    height: 1px;
+    background: #ddd;
+    margin: 0 20px;
+}
+.linuxUl li:hover{
+
+    background: rgba(0, 0, 0, 0.1);
+}
+.modalLinuxArrow .i_arrow {
+    position: relative;
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform-origin:center center;
+    transform: rotate(-225deg);
+    margin-left: 4px;
+    transition: all 500ms;
+    top: -2px;
+}
+.linuxBox:hover .modalLinuxArrow .i_arrow {
+    transform-origin:center center;
+    -moz-transform:rotate(-45deg);
+    -moz-transition:all .1s ease-in .1s;
+    -webkit-transform:rotate(-45deg);
+    -webkit-transition:all .1s ease-in .1s;
+    -o-transform:rotate(-45deg);
+    -o-transition:all .1s ease-in .1s;
+	transform:rotate(-45deg);
+    transition:all .1s ease-in .1s;
+    top:0px;
+}
+.linuxBox .xiazai{
+    margin-left: -23px;
+}

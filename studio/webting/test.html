@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title>Hexo</title>
+  <meta name="description" content="42cloud 是一个有意思的空间" />
+  <meta name="keywords" content="42team,42cloud,Linux,Python,Java,C++,漫画,Sakura" />
+  
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/xbclub/imageCDN//upload/20200311210331.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.6/css/googlefont.css" media="all">
+<!--  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">-->
+  <link rel="stylesheet" id="saukra_css-css" href="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.6/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.6/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.6/css/font.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.6/css/insight.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.6/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.6/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.6/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "中日友好";
+  mashiro_option.author_name = "";
+  mashiro_option.site_url = "https://42cloud.cn";
+  mashiro_option.v_appId = "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz";
+  mashiro_option.v_appKey = "mgOpfzbkHYqU92CV4IDlAUHQ";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/xbclub/CDN@master/manifest/webp/1ac3fa3ef82c93a8d46384e256342711.webp,https://cdn.jsdelivr.net/gh/xbclub/CDN@master/manifest/webp/6f005cbc1865ff1b706aba57347988ab.webp,https://cdn.jsdelivr.net/gh/xbclub/CDN@master/manifest/webp/512a1fded4940ba8d5f215809ff8c153.webp,https://cdn.jsdelivr.net/gh/xbclub/CDN@master/manifest/webp/783bf161f47b32882f0e962fd4064de7.webp,https://cdn.jsdelivr.net/gh/xbclub/CDN@master/manifest/webp/19313b0d62b27c8ba022f60fbfedd5ee.webp,https://cdn.jsdelivr.net/gh/xbclub/CDN@master/manifest/webp/a5fa4f9db760f58fc48f03d66b4967f7.webp,https://cdn.jsdelivr.net/gh/xbclub/CDN@master/manifest/webp/b3e8dae89b950b940dc0edd1e8cc0566.webp,https://cdn.jsdelivr.net/gh/xbclub/CDN@master/manifest/webp/e9f33c2c502ab43804964ce7edd431f9.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a target="_blank" rel="noopener" href="https://42cloud.cn">
+          <img src="https://cdn.jsdelivr.net/gh/xbclub/CDN/wp-content/uploads/2020/01/4311c9ad04554119.png">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>Live your life with passion! With some drive!</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/xbclub" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.6/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="525255289@qq.com" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.6/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  
+  <div id="video-container" style="display: none;">
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name="" src="" width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu" >
+    </div>
+  </div>
+  
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+ 
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">中日友好</span>
+            <span class="shironeko"></span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a target="_blank" rel="noopener" href="https://muskmelonor.top/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          电台
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/study/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          学习
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/%E5%9B%BE%E9%9B%86/">
+                          <i class="fa fa-photo" aria-hidden="true"></i>
+                          图集
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/lab/">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          Lab
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+        <div class="pattern-center-blank"></div>
+  
+  <div id="content" class="site-content">
+    <article class="post-item post-301 page type-page status-publish has-post-thumbnail hentry">
+      
+<!doctype html>
+<html>
+<head>
+    <title> TED演讲（视频版）双语精选 | 每日英语听力_欧路词典</title>
+    <meta name="referrer" content="no-referrer" />
+    <meta name="keywords" content="TED,演讲,（,视频,版,）,双语,精选每日英语听力,英语有声书,儿童英语,BBC,VOA慢速,voa常速,BBC,CNN Student News,欧路词典" />
+    <meta name="description" content=" &#x2B; 原谅如何创造一个更加公正的法律系统  Martha Minow: How forgiveness can create a more just legal system 收录在每日英语听力的TED演讲（视频版）双语精选频道中。TED双语视频精选。《每日英语听力》是专为英语学习者定制的听力训练软件。收录了英语有声书,儿童英语,BBC,VOA慢速,voa常速,BBC,CNN Student News等众多听力内容。软件中的每篇都配有原文对照，配合《欧路词典》使用会使您的英语学习进步更快。" />
+    <meta charset="utf-8" />
+    <meta name="apple-itunes-app" content="app-id=570118289">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="../../content/css/webting/desktopVideo.css">
+        <link href="/Content/css/webting/noselect.css" rel="stylesheet" />
+    <link href="/Content/css/webting/desktopPublic.css" rel="stylesheet" />
+    <link href="/Content/css/ting/purchase.css?1010" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.8.2.min.js"></script>
+
+</head>
+<body>
+        	<h1>原谅如何创造一个更加公正的法律系统  Martha Minow: How forgiveness can create a more just legal system </h1>	
+            <div class="content" id="article"><div class="videoArea"><video class="video" preload="none" webkit-playsinline="" src="http://api.frdic.com/api/v3/media/mp3/fb298ea9-b4ab-11eb-9f05-00505686c5e6?type=mp4"  poster=""></video>			<div class="startPlay"></div>			<div class="loading"></div>			<div class="tipContent">未能成功加载，请稍后再试</div>			<div class="volumeArea">				<span class="state"></span>				<span class="volumeContainer"><span class="volume"></span></span>			</div>			<div class="positionArea">				<span class="direct"></span>				<span class="directTime">0</span>/<span class="duration">0</span>			</div>			<div class="lockControl off"></div>			<ul class="controls" class="controls">				<li class="playControl pause"></li>				<li class="subControl off"></li>				<li class="position">					<span class="percent"></span>					<span class="posControl"><span class="posContent"></span></span>				</li>				<li class="time"><span class="curTime">0</span>/<span class="duration">0</span></li>				<li class="screenControl normal"></li>			</ul>			<ul class="subArea">				<li class="display originSub"><a>显示字幕和译文</a><a>显示字幕</a></li>				<li class="disOrigin transSub"><a>只显示字幕</a><a>显示译文</a></li>				<li class="close originSub"><a>关闭字幕和译文</a><a>关闭字幕</a></li>				<li class="disTrans transSub"><a>只显示译文</a><a>关闭译文</a></li>			</ul>			<div class="subTitle">				<p class="origin"></p>				<p class="trans"></p>			</div>		</div>		<p class="summaryTitle"></p>		<div class="description"></div>		<div class="article"><p class="paragraph"><span class="sentence J_00:13.00" id="J_00:13.00" data-starttime="00:13.00" data-endtime="00:19.02"><w>Would</w><d> </d><w>you</w><d> </d><w>ever</w><d> </d><w>forgive</w><d> </d><w>a</w><d> </d><w>person</w><d> </d><w>who</w><d> </d><w>kills</w><d> </d><w>a</w><d> </d><w>member</w><d> </d><w>of</w><d> </d><w>your</w><d> </d><w>family</w><d>? </d></span><span class="sentence J_00:19.02" id="J_00:19.02" data-starttime="00:19.02" data-endtime="00:33.94"><w>In</w><d> </d><w>September</w><d> </d><w>of</w><d> </d><w>2019</w><d>, </d><w>Dallas</w><d> </d><w>police</w><d> </d><w>officer</w><d> </d><w>Amber</w><d> </d><w>Guyger</w><d> </d><w>was</w><d> </d><w>sentenced</w><d> </d><w>for</w><d> </d><w>murder</w><d>, </d><w>and</w><d> </d><w>then</w><d> </d><w>the</w><d> </d><w>brother</w><d> </d><w>of</w><d> </d><w>the</w><d> </d><w>victim</w><d> </d><w>forgave</w><d> </d><w>her</w><d>. </d></span></p><p class="paragraph"><span class="sentence J_00:33.94" id="J_00:33.94" data-starttime="00:33.94" data-endtime="00:44.88"><w>Brandt</w><d> </d><w>Jean</w><d> </d><w>was</w><d> </d><w>18</w><d> </d><w>years</w><d> </d><w>old</w><d>, </d><w>and</w><d> </d><w>I</w><d> </d><w>joined</w><d> </d><w>the</w><d> </d><w>rest</w><d> </d><w>of</w><d> </d><w>the</w><d> </d><w>country</w><d> </d><w>watching</w><d> </d><w>on</w><d> </d><w>television</w><d> </d><w>in</w><d> </d><w>awe</w><d> </d><w>at</w><d> </d><w>that</w><d> </d><w>act</w><d> </d><w>of</w><d> </d><w>grace</w><d>. </d></span><span class="sentence J_00:44.88" id="J_00:44.88" data-starttime="00:44.88" data-endtime="00:47.28"><w>But</w><d> </d><w>I</w><d> </d><w>also</w><d> </d><w>worried</w><d>. </d></span></p><p class="paragraph"><span class="sentence J_00:47.28" id="J_00:47.28" data-starttime="00:47.28" data-endtime="00:56.90"><w>I</w><d> </d><w>worried</w><d> </d><w>that</w><d> </d><w>people</w><d> </d><w>who</w><d> </d><w>are</w><d> </d><w>African</w><d> </d><w>American</w><d> </d><w>like</w><d> </d><w>Brandt</w><d> </d><w>Jean</w><d> </d><w>are</w><d> </d><w>expected</w><d> </d><w>to</w><d> </d><w>forgive</w><d> </d><w>more</w><d> </d><w>often</w><d> </d><w>than</w><d> </d><w>other</w><d> </d><w>people</w><d>. </d></span><span class="sentence J_00:56.90" id="J_00:56.90" data-starttime="00:56.90" data-endtime="01:06.94"><w>And</w><d> </d><w>I</w><d> </d><w>worried</w><d> </d><w>that</w><d> </d><w>a</w><d> </d><w>white</w><d> </d><w>police</w><d> </d><w>officer</w><d> </d><w>like</w><d> </d><w>Amber</w><d> </d><w>Guyger</w><d> </d><w>receives</w><d> </d><w>a</w><d> </d><w>lesser</w><d> </d><w>sentence</w><d> </d><w>than</w><d> </d><w>other</w><d> </d><w>people</w><d> </d><w>who</w><d> </d><w>commit</w><d> </d><w>wrongful</w><d> </d><w>killings</w><d>. </d></span></p><p class="paragraph"><span class="sentence J_01:06.94" id="J_01:06.94" data-starttime="01:06.94" data-endtime="01:13.66"><w>But</w><d> </d><w>because</w><d> </d><w>I</w><d>'</d><w>m</w><d> </d><w>a</w><d> </d><w>law</w><d> </d><w>professor</w><d>, </d><w>I</w><d> </d><w>also</w><d> </d><w>worried</w><d> </d><w>about</w><d> </d><w>the</w><d> </d><w>law</w><d> </d><w>itself</w><d>. </d></span><span class="sentence J_01:13.66" id="J_01:13.66" data-starttime="01:13.66" data-endtime="01:25.13"><w>The</w><d> </d><w>law</w><d> </d><w>leans</w><d> </d><w>so</w><d> </d><w>severely</w><d> </d><w>towards</w><d> </d><w>punishment</w><d> </d><w>these</w><d> </d><w>days</w><d> </d><w>that</w><d> </d><w>it</w><d>'</d><w>s</w><d> </d><w>part</w><d> </d><w>of</w><d> </d><w>the</w><d> </d><w>problem</w><d>. </d><w>And</w><d> </d><w>that</w><d>'</d><w>s</w><d> </d><w>what</w><d> </d><w>I</w><d> </d><w>want</w><d> </d><w>to</w><d> </d><w>talk</w><d> </d><w>about</w><d> </d><w>here</w><d>. </d></span></p><p class="paragraph"><span class="sentence J_01:25.13" id="J_01:25.13" data-starttime="01:25.13" data-endtime="01:46.24"><w>The</w><d> </d><w>powerful</w><d> </d><w>example</w><d> </d><w>of</w><d> </d><w>one</w><d> </d><w>individual</w><d>'</d><w>s</w><d> </d><w>forgiveness</w><d> </d><w>makes</w><d> </d><w>me</w><d> </d><w>worry</w><d> </d><w>that</w><d> </d><w>lawyers</w><d> </d><w>and</w><d> </d><w>officials</w><d> </d><w>too</w><d> </d><w>often</w><d> </d><w>overlook</w><d> </d><w>the</w><d> </d><w>tools</w><d> </d><w>that</w><d> </d><w>law</w><d> </d><w>itself</w><d> </d><w>creates</w><d> </d><w>to</w><d> </d><w>allow</w><d> </d><w>forgiveness</w><d>, </d><w>when</w><d> </d><w>the</w><d> </d><w>principle</w><d> </d><w>should</w><d> </d><w>be</w><d> </d><w>the</w><d> </d><w>cornerstone</w><d> </d><w>of</w><d> </d><w>a</w><d> </d><w>thriving</w><d> </d><w>society</w><d>. </d></span><span class="sentence J_01:46.24" id="J_01:46.24" data-starttime="01:46.24" data-endtime="01:57.09"><w>I</w><d> </d><w>worry</w><d> </d><w>that</w><d> </d><w>lawyers</w><d> </d><w>and</w><d> </d><w>officials</w><d> </d><w>do</w><d> </d><w>not</w><d> </d><w>adequately</w><d> </d><w>use</w><d> </d><w>the</w><d> </d><w>tools</w><d> </d><w>of</w><d> </d><w>forgiveness</w><d>, </d><w>by</w><d> </d><w>which</w><d> </d><w>I</w><d> </d><w>mean</w><d> </d><w>letting</w><d> </d><w>go</w><d> </d><w>of</w><d> </d><w>justified</w><d> </d><w>grievance</w><d>. </d></span></p><p class="paragraph"><span class="sentence J_01:57.09" id="J_01:57.09" data-starttime="01:57.09" data-endtime="01:58.40"><w>And</w><d> </d><w>those</w><d> </d><w>tools</w><d> </d><w>are</w><d> </d><w>many</w><d>. </d></span><span class="sentence J_01:58.40" id="J_01:58.40" data-starttime="01:58.40" data-endtime="02:11.07"><w>They</w><d> </d><w>include</w><d> </d><w>pardons</w><d>, </d><w>commutations</w><d>, </d><w>expungement</w><d>, </d><w>bankruptcy</w><d> </d><w>for</w><d> </d><w>debt</w><d> </d><w>and</w><d> </d><w>the</w><d> </d><w>discretion</w><d> </d><w>that</w><d>'</d><w>s</w><d> </d><w>held</w><d> </d><w>by</w><d> </d><w>police</w><d> </d><w>and</w><d> </d><w>prosecutors</w><d> </d><w>and</w><d> </d><w>judges</w><d>. </d></span></p><p class="paragraph"><span class="sentence J_02:11.07" id="J_02:11.07" data-starttime="02:11.07" data-endtime="02:27.12"><w>But</w><d> </d><w>I</w><d> </d><w>also</w><d> </d><w>worry</w><d> — </d><w>I</w><d> </d><w>worry</w><d> </d><w>a</w><d> </d><w>lot</w><d> — </d><w>I</w><d> </d><w>worry</w><d> </d><w>that</w><d> </d><w>these</w><d> </d><w>tools</w><d>, </d><w>when</w><d> </d><w>used</w><d>, </d><w>replicate</w><d> </d><w>the</w><d> </d><w>disparities</w><d>, </d><w>the</w><d> </d><w>inequities</w><d> </d><w>along</w><d> </d><w>the</w><d> </d><w>lines</w><d> </d><w>of</w><d> </d><w>race</w><d> </d><w>and</w><d> </d><w>class</w><d> </d><w>and</w><d> </d><w>other</w><d> </d><w>markers</w><d> </d><w>of</w><d> </d><w>advantage</w><d> </d><w>and</w><d> </d><w>disadvantage</w><d>. </d></span><span class="sentence J_02:27.12" id="J_02:27.12" data-starttime="02:27.12" data-endtime="02:36.92"><w>Biases</w><d> </d><w>or</w><d> </d><w>privileged</w><d> </d><w>access</w><d> </d><w>are</w><d> </d><w>at</w><d> </d><w>work</w><d> </d><w>when</w><d> </d><w>United</w><d> </d><w>States</w><d> </d><w>presidents</w><d> </d><w>pardon</w><d> </d><w>people</w><d> </d><w>charged</w><d> </d><w>with</w><d> </d><w>crimes</w><d>. </d></span></p><p class="paragraph"><span class="sentence J_02:36.92" id="J_02:36.92" data-starttime="02:36.92" data-endtime="02:47.67"><w>Historically</w><d>, </d><w>white</w><d> </d><w>people</w><d> </d><w>are</w><d> </d><w>pardoned</w><d> </d><w>four</w><d> </d><w>times</w><d> </d><w>as</w><d> </d><w>often</w><d> </d><w>as</w><d> </d><w>members</w><d> </d><w>of</w><d> </d><w>minority</w><d> </d><w>groups</w><d> </d><w>for</w><d> </d><w>the</w><d> </d><w>same</w><d> </d><w>crime</w><d>, </d><w>same</w><d> </d><w>sentence</w><d>. </d></span><span class="sentence J_02:47.67" id="J_02:47.67" data-starttime="02:47.67" data-endtime="02:55.54"><w>Forgiveness</w><d> </d><w>between</w><d> </d><w>individuals</w><d> </d><w>is</w><d> </d><w>supported</w><d> </d><w>by</w><d> </d><w>every</w><d> </d><w>religious</w><d> </d><w>tradition</w><d>, </d><w>every</w><d> </d><w>philosophic</w><d> </d><w>tradition</w><d>. </d></span></p><p class="paragraph"><span class="sentence J_02:55.54" id="J_02:55.54" data-starttime="02:55.54" data-endtime="03:04.19"><w>And</w><d> </d><w>medical</w><d> </d><w>evidence</w><d> </d><w>now</w><d> </d><w>shows</w><d> </d><w>the</w><d> </d><w>health</w><d> </d><w>benefits</w><d> </d><w>of</w><d> </d><w>letting</w><d> </d><w>go</w><d> </d><w>of</w><d> </d><w>grievances</w><d> </d><w>and</w><d> </d><w>resentments</w><d>. </d></span><span class="sentence J_03:04.19" id="J_03:04.19" data-starttime="03:04.19" data-endtime="03:20.45"><w>As</w><d> </d><w>Nelson</w><d> </d><w>Mandela</w><d> </d><w>led</w><d> </d><w>South</w><d> </d><w>Africa</w><d>'</d><w>s</w><d> </d><w>transition</w><d> </d><w>from</w><d> </d><w>apartheid</w><d> </d><w>to</w><d> </d><w>democracy</w><d>, </d><w>he</w><d> </d><w>explained</w><d>, "</d><w>Resentment</w><d> </d><w>is</w><d> </d><w>like</w><d> </d><w>drinking</w><d> </d><w>a</w><d> </d><w>poison</w><d> </d><w>and</w><d> </d><w>hoping</w><d> </d><w>it</w><d> </d><w>will</w><d> </d><w>kill</w><d> </d><w>your</w><d> </d><w>enemies</w><d>." </d></span></p><p class="paragraph"><span class="sentence J_03:20.45" id="J_03:20.45" data-starttime="03:20.45" data-endtime="03:24.80"><w>Law</w><d> </d><w>can</w><d> </d><w>remove</w><d> </d><w>the</w><d> </d><w>penalties</w><d> </d><w>for</w><d> </d><w>those</w><d> </d><w>who</w><d> </d><w>apologize</w><d> </d><w>and</w><d> </d><w>seek</w><d> </d><w>forgiveness</w><d>. </d></span><span class="sentence J_03:24.80" id="J_03:24.80" data-starttime="03:24.80" data-endtime="03:43.18"><w>For</w><d> </d><w>example</w><d>, </d><w>in</w><d> </d><w>39</w><d> </d><w>states</w><d> </d><w>in</w><d> </d><w>the</w><d> </d><w>United</w><d> </d><w>States</w><d> </d><w>and</w><d> </d><w>the</w><d> </d><w>District</w><d> </d><w>of</w><d> </d><w>Columbia</w><d>, </d><w>there</w><d> </d><w>are</w><d> </d><w>laws</w><d> </d><w>that</w><d> </d><w>allow</w><d> </d><w>medical</w><d> </d><w>professionals</w><d> </d><w>to</w><d> </d><w>apologize</w><d> </d><w>when</w><d> </d><w>something</w><d> </d><w>goes</w><d> </d><w>wrong</w><d> </d><w>and</w><d> </d><w>not</w><d> </d><w>fear</w><d> </d><w>that</w><d> </d><w>that</w><d> </d><w>statement</w><d> </d><w>could</w><d> </d><w>later</w><d> </d><w>be</w><d> </d><w>used</w><d> </d><w>against</w><d> </d><w>them</w><d> </d><w>in</w><d> </d><w>an</w><d> </d><w>action</w><d> </d><w>for</w><d> </d><w>damages</w><d>. </d></span></p></div><a href="/ting#download">下载全新《每日英语听力》客户端，查看完整内容</a>	</div><script type="text/javascript" src="../../content/js/webting/video.js"></script>
+
+        <div class="revisedVideoPlay botBoxVideoPlay">
+            <div class="articleBotBox">
+                <div class="seeMoreImg"><img src="https://static.eudic.net/web/ting/whiteShow.png"></div>
+            </div>
+        </div>
+
+
+    <script type="text/javascript">
+        console.log("desktopVideoPlay")
+        document.body.className = 'en';
+        document.body.setAttribute('data', '每日英语听力');
+        var translate = {
+  "translation": [
+    {
+      "order": 1,
+      "timestamp": "00:13.00",
+      "timestamps": "[00:13.00],[00:19.02]",
+      "text": "你会原谅一个杀害了你家人的罪犯吗？",
+      "hashvalue": "TVW1imopOmf8NSyXxBeqfLS0k4Q="
+    },
+    {
+      "order": 1,
+      "timestamp": "00:19.02",
+      "timestamps": "[00:19.02],[00:33.94]",
+      "text": "在 2019 年 9 月，达拉斯警察安柏尔 · 盖格因谋杀被判刑，紧接着受害者的兄弟宽恕了她。",
+      "hashvalue": "NbDLtCENkI+0N1PgZeDoJjSmjgE="
+    },
+    {
+      "order": 2,
+      "timestamp": "00:33.94",
+      "timestamps": "[00:33.94],[00:44.88]",
+      "text": "当时布兰特 · 基恩 18 岁，而我和全国的观众在电视上见证了他这仁慈之举，并深感敬佩。",
+      "hashvalue": "2cdrNQcaF+q9MNtqoxQl0XbIztw="
+    },
+    {
+      "order": 2,
+      "timestamp": "00:44.88",
+      "timestamps": "[00:44.88],[00:47.28]",
+      "text": "但我也担心。",
+      "hashvalue": "lxejLeMMRjwTzypgW1xIYb+RofI="
+    },
+    {
+      "order": 3,
+      "timestamp": "00:47.28",
+      "timestamps": "[00:47.28],[00:56.90]",
+      "text": "我担心像布兰特 · 基恩这样的非裔美国人会比他人更频繁地被期望去原谅。",
+      "hashvalue": "Vm9D9xRkdoy2R8ldLVzfueLviPw="
+    },
+    {
+      "order": 3,
+      "timestamp": "00:56.90",
+      "timestamps": "[00:56.90],[01:06.94]",
+      "text": "<img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/d7yP1K3zhqFbKfJxfYhoEYQxqhA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/AJB9YEWzncayFZVV8y8@sxl3g4k=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/NbHhKjbkkvqpCrw5bFbLuInh4JY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/kAjXCZDDr7P56L3MfSNrVWd92Rc=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/r4h9GUB6EPpDwLQCGraEplhG5Vk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/n@xrVc@@KXR@@85EAMyF3RJg3VNu0=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/4fzNy7QYUcbVvIJQ0Sgom8pVxJY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/mNdKC9SesGY6EZ2BfmG@@SQyU5JE=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/o71fmelfjZ4RsMjQfgJ4oRw6i38=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/zLW9ssSW2lpDZNLIry1C0m3i6p0=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/o71fmelfjZ4RsMjQfgJ4oRw6i38=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/GFsdUQohQiMAQn6MYefYsmivtb4=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/PiN1XpDhQEB3huuAoNvLByAgHdU=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/eOa@@HEkbQyIUeg6@@k3buuXBEJ84=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/TrfzFT5p@azlMh1C1I93SR@@J06w=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/mvqcsf6Evl6vjm81J4t53XXGbRk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/uAytJou6CIOImc271WLV7Lon5Ns=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/aOaNGVRnj6E6UuVApZRXEMHLMBY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/CESG6CNMCwFh9YY7obbf7KvOkCw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/tg4@@d6OQQGmLU@@WGcV41bRcgpuw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/CU@@YxBMkWfLuncEK7oPRYBFeMHA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/iTXm@gLs7BQWhfIjt@VDVyt0hdQ=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/NY3wzsVtvjjwuC8oA5@g@@4IBgM=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/J0ADVL468pXZpfyHpK7AiE@@cCWk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/NXCKaYiORfQhmX3lhAljOfN18Sc=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/48TUtnRDkMNk@@X0tbGnCgHJDjTY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/TrfzFT5p@azlMh1C1I93SR@@J06w=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/NnkfcSu38VJSHhBXI8zFLqf0hko=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/j23oBGEe5nZrn5tR5LTEFk4Hk98=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/JKB@@Pc49hlhKU@tVlG9Fi8GlXgU=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/aOaNGVRnj6E6UuVApZRXEMHLMBY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/rS20gQRcW3ZIXh2mRie5j49llT8=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/mvqcsf6Evl6vjm81J4t53XXGbRk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/aOaNGVRnj6E6UuVApZRXEMHLMBY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/6ft12cm4fdO3JivgLt8IUG11azs=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/EMgjAQJW8DMXH7nq5zLsAB@@VLos=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/F2K4P1GK@Ail673PKncKQR2jPAY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/zfNltmKpun3U3Wzr9jaU8CkjV4Q=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/zhY@jnI2oH7EUoMUAx@@WwbLQEkw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/mvqcsf6Evl6vjm81J4t53XXGbRk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/@McjAvhTCQc11QLpChYuf4SkISQ=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/VvwjZJp11Z6smLbU3Vwgxby6UPA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/T9YCqfF9BTR1hUHyz7J69153bwE=.png\"></img>",
+      "hashvalue": "agzKByXxciIfLLTg2xJxexJThYI="
+    },
+    {
+      "order": 4,
+      "timestamp": "01:06.94",
+      "timestamps": "[01:06.94],[01:13.66]",
+      "text": "<img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/RTX4VcrwGdxafQ4f9iASvAsrris=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/IyxlPb7kVsjLC4A5uTIdeLoJpnQ=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/5xLBl27Bk1IRedJjXMtTn5mpZsI=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/d7yP1K3zhqFbKfJxfYhoEYQxqhA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/CTatcwF14L2oNyxzZFuQ7183iU4=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/BL2lIYbKtcvbxcMwrrQlGuqbdUg=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/mTPJSu3@YhUmC3URw6@@lYR29jD4=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/jwgYUbafKaNkl3EFbazzHYpYqIM=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/UGsEtp@ox5HjrgpYCXkMZpmGQQw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/XUQr8dEShtZ1vUpOvPKPfx2pFJM=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/yublnb30zJM6qknqYltNqJSUDC8=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/XWL@@rFX6Yb4yHZwIW7QpcNU00nc=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/CU@@YxBMkWfLuncEK7oPRYBFeMHA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/d7yP1K3zhqFbKfJxfYhoEYQxqhA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/AJB9YEWzncayFZVV8y8@sxl3g4k=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/NbHhKjbkkvqpCrw5bFbLuInh4JY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/kAjXCZDDr7P56L3MfSNrVWd92Rc=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/jwgYUbafKaNkl3EFbazzHYpYqIM=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/UGsEtp@ox5HjrgpYCXkMZpmGQQw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/67S95uuFHgb2SuDma95lQBAEfFg=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/T1XJdZVbfmK45diwOEVMYjblS0E=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/T9YCqfF9BTR1hUHyz7J69153bwE=.png\"></img>",
+      "hashvalue": "/fN3eMqNVRQdoatgHm56FM4NUsI="
+    },
+    {
+      "order": 4,
+      "timestamp": "01:13.66",
+      "timestamps": "[01:13.66],[01:25.13]",
+      "text": "<img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/k0mLYx2F9tgYm9iz7kBIkNMJsp8=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/OMUCrnUL@@k@lvO7ysaGybQOOF5k=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/jwgYUbafKaNkl3EFbazzHYpYqIM=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/UGsEtp@ox5HjrgpYCXkMZpmGQQw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/8RGOEshbnH0JOZFvx3S1JfWKlzE=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/FpvRsdkhbkvH4Gc2oz@@E6aJI0ME=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/xELmrrJGEkkKZxcPMjaVr0lgRBc=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/80leTZG6VL2@@Z5fXK5xxcCpim2I=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/P5JwCw3tufYvpHu0@NUvJhmsLCA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/k91gxyl66fAs7tqFQrFDnNunQj0=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/7WNMKbCv6V5FNjOIaTmpAqswOmY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/EKDHcxm30eiq4Ub@Uel2sIfS8WQ=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/92CNlZT6eB@tHnOqTfdKZhlZN@@U=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/VvwjZJp11Z6smLbU3Vwgxby6UPA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/CU@@YxBMkWfLuncEK7oPRYBFeMHA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/eOa@@HEkbQyIUeg6@@k3buuXBEJ84=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/JEpDOZTLN83mN7nsTCVttvflIEE=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/CTatcwF14L2oNyxzZFuQ7183iU4=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/R9Ye3FzEHucpv8dcU751f@@lcXqY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/SUOZFojXDpPD4fQbEM6AbBMgqsU=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/mvqcsf6Evl6vjm81J4t53XXGbRk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/BL2lIYbKtcvbxcMwrrQlGuqbdUg=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/nQeXvSnaduWK17IzC38hQzyurBo=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/8q@@Lep1bNU8rNUfARXZ5EHRkWek=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/CU@@YxBMkWfLuncEK7oPRYBFeMHA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/94WiK0Wv8JBI5YSNT9T5EwUj3qE=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/eOa@@HEkbQyIUeg6@@k3buuXBEJ84=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/MjxYAJzOSKiZINOQyInedxkK7O0=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/CTatcwF14L2oNyxzZFuQ7183iU4=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/d7yP1K3zhqFbKfJxfYhoEYQxqhA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/g1Es00Q4PDKii@mbi@@fLRBaa@aQ=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/UBqpdoNZCOYyTfKXThb0Spf@@9Pw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/eOa@@HEkbQyIUeg6@@k3buuXBEJ84=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/dp0uSTg@4eBDHLBxzoLvzUyXwzw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/CLcoAiP4o4xm7xAqHSyPjZ2Idhg=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/SypOj0@@HwljFFrJKaSxzEIxt420=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/mvqcsf6Evl6vjm81J4t53XXGbRk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/7i4MPmRI1ryurV5juktzr0C8tZM=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/SUOZFojXDpPD4fQbEM6AbBMgqsU=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/T9YCqfF9BTR1hUHyz7J69153bwE=.png\"></img>",
+      "hashvalue": "0PQPVUaMpMT1NuYB/0zDYOA0d2s="
+    },
+    {
+      "order": 5,
+      "timestamp": "01:25.13",
+      "timestamps": "[01:25.13],[01:46.24]",
+      "text": "<img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/xdt7O@E70R82aWEpxHZWctBzZcY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/aOaNGVRnj6E6UuVApZRXEMHLMBY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/YIIsPmaS52f3rOej4VtFkSEinKw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/b3nKRVxelrIINTDbhawuW@@5YDjQ=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/mvqcsf6Evl6vjm81J4t53XXGbRk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/3MYas7tOLdsl6e1c6XI@@nVI@2o8=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/@@OOjIhHYrTZ0HXzV3FtlgRUSjdM=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/IkUJbiPdE5ITOLnNUB@@z1yXOW1E=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/m@sHr1EYgqe4zYBWS9CHn13tB0w=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/qwj14udRmvLnjCGF5L5iY2LCy9g=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/d7yP1K3zhqFbKfJxfYhoEYQxqhA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/NbHhKjbkkvqpCrw5bFbLuInh4JY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/kAjXCZDDr7P56L3MfSNrVWd92Rc=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/UGsEtp@ox5HjrgpYCXkMZpmGQQw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/HU17UhdGP2JvCRecD1tv16wq5Zc=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/lhDAJXdwIifjElnK7pSOGgrDIi8=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/KKUH0r4JKeqqrmd@TdYVxhyB@@wA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/tg4@@d6OQQGmLU@@WGcV41bRcgpuw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/@fB9pABHnAoafloF2tKGfx@Cf3U=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/cI@@rk5fBl4mTUAW7BeOhWwVq914=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/6ft12cm4fdO3JivgLt8IUG11azs=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/uhUG1H26qip9HGUjAOHM6pI6jbs=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/Fi1QFT@3NuC1GGQMy0H93gx8TrM=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/jwgYUbafKaNkl3EFbazzHYpYqIM=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/UGsEtp@ox5HjrgpYCXkMZpmGQQw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/67S95uuFHgb2SuDma95lQBAEfFg=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/T1XJdZVbfmK45diwOEVMYjblS0E=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/UC7yNu@@PMyAEkdnTXhMOJC3aaXQ=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/UNbQzNC3qRLHG2pxGb9VgqNZ6UE=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/Y@8nZNbEae2mt7SDhxNKHM7TQR4=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/NhG1HE8Qy0TTkgbDLmw0VNywPOs=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/mvqcsf6Evl6vjm81J4t53XXGbRk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/FSyR4POOLsIXbwofuRJGXgN9bwQ=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/@TEPgfNKb@@YWpfaUa@@msQz6LG@E=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/YIIsPmaS52f3rOej4VtFkSEinKw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/b3nKRVxelrIINTDbhawuW@@5YDjQ=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/mvqcsf6Evl6vjm81J4t53XXGbRk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/82QhWQPFT5o11DpCDzA7y0bInLM=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/PGtzyPIibqOsmsv41@@GDAuX7K9s=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/CU@@YxBMkWfLuncEK7oPRYBFeMHA=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/94WiK0Wv8JBI5YSNT9T5EwUj3qE=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/eOa@@HEkbQyIUeg6@@k3buuXBEJ84=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/YqrdNdnyhIEO1PEmW7PUbWbOUwk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/JJIewlu5IaKgvGAqwxC1bTMYFfU=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/tIdaSU1TrBF9hMU1RReEfXyi7w4=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/67S95uuFHgb2SuDma95lQBAEfFg=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/bIhwA5XCcHWtEDdEjod7cGBqsdE=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/Q@@NaASxhzvs2Eu1M9N3AV38FSUw=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/CTatcwF14L2oNyxzZFuQ7183iU4=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/BL2lIYbKtcvbxcMwrrQlGuqbdUg=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/xdt7O@E70R82aWEpxHZWctBzZcY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/2l3pMEMWBtgJeWUIlEZI71v0BtY=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/cCfWr5lAHqOzVTdSiNcbP0ue6Ho=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/@@wras46W9o9GdHfOdOK@JtP5Fck=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/6ft12cm4fdO3JivgLt8IUG11azs=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/mvqcsf6Evl6vjm81J4t53XXGbRk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/5MfRLBWt1laqZqfribdVWwiF70E=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/atTMKzN@@P3juL5ugXbeXyl3LJJk=.png\"></img><img class=\"dictimgtoword\" src=\"http://dict.eudic.net/DictData/Dicts/tmp/wordimg/T9YCqfF9BTR1hUHyz7J69153bwE=.png\"></img>",
+      "hashvalue": "ldK6ld4C4PvvzbFLXYpEHQjF+gg="
+    },
+    {
+      "order": 5,
+      "timestamp": "01:46.24",
+      "timestamps": "[01:46.24],[01:57.09]",
+      "text": "here",
+      "hashvalue": "pzgJfsC1KbND+68NKrGybxjmfUc="
+    }
+  ],
+  "wordhints": [],
+  "wikis": [],
+  "phrases": {},
+  "machine_translation": [],
+  "has_translation": true,
+  "has_wordhint": true,
+  "id": "fb298ea9-b4ab-11eb-9f05-00505686c5e6",
+  "note_comment": [],
+  "has_machine_translation": false
+};
+    </script>
+    <script src="../Content/jswebting/desktopVideo.js?1"></script>
+    <script>
+        //是否显示下载查看全文按钮,false：显示按钮
+          var allowPlayFullMedia = "False".toLowerCase()=='true';
+        window.onload = function () {
+            if (ture) {
+                //设置内容高度
+                var allConHeight = $("#article").height() - 130;
+                var realHeight = $("#article").prop('scrollHeight') - 130;
+                $("#article").css({ 'height': realHeight > allConHeight ? allConHeight : realHeight, 'overflow': 'hidden' });
+            }
+        }
+    </script>
+    
+</body>
+</html>
+      <!-- .entry-content -->
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <div class="single-reward">
+        <div class="reward-open">赏
+          <div class="reward-main">
+            <ul class="reward-row">
+              <li class="alipay-code"><img src="/img/custom/donate/AliPayQR.jpg"></li>
+              <li class="wechat-code"><img src="/img/custom/donate/WeChanQR.jpg"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+      <footer class="post-footer">
+        <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+        <div class="post-tags">
+        </div>
+        <div class="post-share">
+          <div class="social-share sharehidden share-component"></div>
+          <i class="iconfont show-share icon-forward"></i>
+        </div>
+      </footer><!-- .entry-footer -->
+    </article>
+      <!-- #post-## -->
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
+          <a href="/about/" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/xbclub/CDN/wp-content/uploads/2020/01/4311c9ad04554119.png" itemprop="image" alt="" height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a target="_blank" href="https://42cloud.cn" itemprop="url" rel="author noopener"></a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i>Live your life with passion! With some drive!</p>
+      </section>
+  </div><!-- #primary -->
+</div>
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            // PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+    <div class="site-info">
+        <div class="footertext">
+            <div class="img-preload">
+                <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+                <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+            </div>
+            
+                <p id="chakhsu"></p>
+            
+            <p>本站总访问量：<a id="allcount"></a></p>
+            <p style="color: #666666;">这里是页脚信息</p>
+            
+                <p id="momk" style="font-family: 'Ubuntu', sans-serif;color: #b9b9b9;"></p>
+            
+        </div>
+        <div class="footer-device">
+            <p style="font-family: 'Ubuntu', sans-serif;">
+ <span style="">Theme <a href="https://github.com/xbclub/Hexo-theme-sakura" target="_blank"
+                         style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i
+             class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a
+             href="https://2heng.xin/" target="_blank"
+             style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a
+             href="https://www.hojun.cn/" target="_blank"
+             style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>&<a
+             href="https://42cloud.cn/" target="_blank"
+             style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">42team, Powered by Hexo</a>
+        </span>
+            </p>
+        </div>
+    </div><!-- .site-info -->
+</footer>
+
+
+<!--<script src="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.7/js/tocbot.min.js"></script>-->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.8/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.8/js/InsightSearch.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.8/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.8/js/zoom.min.js"></script>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@1.4/js/sakura-app.js"></script>
+
+<script src="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.8/js/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.8/js/Valine.min.js'></script>
+<script src="https://cdn.jsdelivr.net/gh/xbclub/staticCDN@0.8/js/botui.js"></script>
+<!-- 不蒜子 网页计数器 -->
+
+      
+       <script>
+  fetch('https://counts.42cloud.cn/api/counts.html')
+        .then(response => response.json())
+        .then(data => {
+              if (document.getElementById("readcount")) {
+                document.getElementById("readcount").innerHTML=data.Count;
+            }
+            if (document.getElementById("allcount")){
+                document.getElementById("allcount").innerHTML=data.Allcount;
+            }
+        })
+        .catch(err => console.error(err))
+</script>
+      
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script> -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        var Poi = {
+            "pjax": "1",
+            "movies": {"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2", "name": "Unbroken.mp4", "live": "close"},
+            "windowheight": "fixed",
+            "codelamp": "close",
+            "ajaxurl": "",
+            "order": "asc",
+            "formpostion": "bottom"
+        };
+    } else {
+        var Poi = {
+            "pjax": "1",
+            "movies": {"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2", "name": "Unbroken.mp4", "live": "open"},
+            "windowheight": "auto",
+            "codelamp": "close",
+            "ajaxurl": "",
+            "order": "asc",
+            "formpostion": "bottom"
+        };
+    }
+    /* ]]> */
+
+</script>
+<script>
+    $(document).ready(function () {
+        if ($(".toc").length > 0 && document.body.clientWidth > 1200) {
+            if ($(".pattern-center").length > 0) { //有图的情况
+                tocbot.init({
+                    // Where to render the table of contents.
+                    tocSelector: '.toc', // 放置目录的容器
+                    // Where to grab the headings to build the table of contents.
+                    contentSelector: '.entry-content', // 正文内容所在
+                    // Which headings to grab inside of the contentSelector element.
+                    scrollSmooth: true,
+                    headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+                    headingsOffset: -400,
+                    scrollSmoothOffset: -85
+                });
+            } else {
+                tocbot.init({
+                    // Where to render the table of contents.
+                    tocSelector: '.toc', // 放置目录的容器
+                    // Where to grab the headings to build the table of contents.
+                    contentSelector: '.entry-content', // 正文内容所在
+                    // Which headings to grab inside of the contentSelector element.
+                    scrollSmooth: true,
+                    headingSelector: 'h1, h2, h3, h4, h5', // 需要索引的标题级别
+                    headingsOffset: -85,
+                    scrollSmoothOffset: -85
+                });
+            }
+            var offsetTop = $('.toc').offset().top - 95;
+            window.onscroll = function () {
+                var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+                if (scrollTop >= offsetTop) {
+                    $('.toc').addClass('toc-fixed');
+                } else {
+                    $('.toc').removeClass('toc-fixed');
+                }
+            }
+        }
+    });
+</script>
+
+    <script type="text/javascript">
+        function NewDate(str) {
+            str = str.split('-');
+            var date = new Date();
+            date.setUTCFullYear(str[0], str[1] - 1, str[2]);
+            date.setUTCHours(0, 0, 0, 0);
+            return date;
+        }
+
+        function momxc() {
+            var birthDay = NewDate("2020-1-24");
+            var today = new Date();
+            var timeold = today.getTime() - birthDay.getTime();
+            var sectimeold = timeold / 1000
+            var secondsold = Math.floor(sectimeold);
+            var msPerDay = 24 * 60 * 60 * 1000;
+            var e_daysold = timeold / msPerDay;
+            var daysold = Math.floor(e_daysold);
+            var e_hrsold = (daysold - e_daysold) * -24;
+            var hrsold = Math.floor(e_hrsold);
+            var e_minsold = (hrsold - e_hrsold) * -60;
+            var minsold = Math.floor((hrsold - e_hrsold) * -60);
+            var seconds = Math.floor((minsold - e_minsold) * -60).toString();
+            document.getElementById("momk").innerHTML = "本站已安全运行" + daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+            setTimeout(momxc, 1000);
+        }
+
+        momxc();
+    </script>
+
+
+
+    <script type="text/javascript">
+        fetch('https://v1.hitokoto.cn')
+            .then(response => response.json())
+            .then(data => {
+                chakhsu(document.getElementById("chakhsu"), data.hitokoto);
+            })
+            .catch(err => console.error(err));
+
+
+        // 文字循环处理 两个参数，第一个是需要显示在哪个标签内append 以id为选择器，第二个参数是 要处理的文字
+        function chakhsu(r, text) {
+            function t() {
+                return b[Math.floor(Math.random() * b.length)];
+            }
+
+            function e() {
+                return String.fromCharCode(94 * Math.random() + 33);
+            }
+
+            function n(r) {
+                for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+                    var l = document.createElement("span");
+                    (l.textContent = e()), (l.style.color = t()), n.appendChild(l);
+                }
+                return n;
+            }
+
+            function i() {
+                var t = o[c.skillI];
+                c.step
+                    ? c.step--
+                    : ((c.step = g),
+                        c.prefixP < l.length
+                            ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++)
+                            : "forward" === c.direction
+                            ? c.skillP < t.length
+                                ? ((c.text += t[c.skillP]), c.skillP++)
+                                : c.delay
+                                    ? c.delay--
+                                    : ((c.direction = "backward"), (c.delay = a))
+                            : c.skillP > 0
+                                ? ((c.text = c.text.slice(0, -1)), c.skillP--)
+                                : ((c.skillI = (c.skillI + 1) % o.length),
+                                    (c.direction = "forward"))),
+                    (r.textContent = c.text),
+                    r.appendChild(
+                        n(
+                            c.prefixP < l.length
+                                ? Math.min(s, s + c.prefixP)
+                                : Math.min(s, t.length - c.skillP)
+                        )
+                    ),
+                    setTimeout(i, d);
+            }
+
+            /*以下内容自定义修改*/
+            var l = "",
+                o = [text].map(function (r) {
+                    return r + "";
+                }),
+                a = 3,
+                g = 1,
+                s = 5,
+                d = 75,
+                b = [
+                    "rgb(110,64,170)",
+                    "rgb(150,61,179)",
+                    "rgb(191,60,175)",
+                    "rgb(228,65,157)",
+                    "rgb(254,75,131)",
+                    "rgb(255,94,99)",
+                    "rgb(255,120,71)",
+                    "rgb(251,150,51)",
+                    "rgb(226,183,47)",
+                    "rgb(198,214,60)",
+                    "rgb(175,240,91)",
+                    "rgb(127,246,88)",
+                    "rgb(82,246,103)",
+                    "rgb(48,239,130)",
+                    "rgb(29,223,163)",
+                    "rgb(26,199,194)",
+                    "rgb(35,171,216)",
+                    "rgb(54,140,225)",
+                    "rgb(76,110,219)",
+                    "rgb(96,84,200)"
+                ],
+                c = {
+                    text: "",
+                    prefixP: -s,
+                    skillI: 0,
+                    skillP: 0,
+                    direction: "forward",
+                    delay: a,
+                    step: g
+                };
+            i();
+        }
+    </script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class="">
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/xbclub/CDN/wp-content/uploads/2020/01/4311c9ad04554119.png">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">中日友好</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/xbclub" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=525255289&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a target="_blank" rel="noopener" href="https://muskmelonor.top/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  电台
+                </a>
+              </li>
+            
+              <li>
+                <a href="/study/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  学习
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/%E5%9B%BE%E9%9B%86/">
+                  <i class="fa fa-photo" aria-hidden="true"></i>
+                  图集
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  Lab
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  
+</body>
+</html>

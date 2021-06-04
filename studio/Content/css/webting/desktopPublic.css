@@ -1,0 +1,107 @@
+/*查看更多，下载软件 start*/
+a {
+  text-decoration:none;
+}
+.revisedVideoPlay .seeMoreImg {
+    position: absolute;
+    z-index: 99;
+    top: -132px;
+    width: 100%;
+    height: 200px;
+}
+.botBoxVideoPlay .seeMoreImg {
+    top: -179px;
+}
+.revisedVideoPlay .seeMoreImg img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.revisedVideoPlay .pullMoreCon, .revisedVideoPlay .hideMoreCon {
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    z-index: 99;
+}
+
+    .revisedVideoPlay .pullMoreCon img {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        top: -10px;
+    }
+
+    .revisedVideoPlay .hideMoreCon img {
+        width: 30px;
+        height: 30px;
+    }
+/*小箭头上下移动*/
+@@keyframes guide_icon {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(3px);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+    75% {
+        transform: translateY(3px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.revisedVideoPlay .pullMoreCon, .revisedVideoPlay .hideMoreCon {
+    -webkit-animation: guide_icon 1s linear infinite;
+    animation: guide_icon 1s linear infinite;
+}
+
+.revisedVideoPlay .hideMoreCon {
+    display: none;
+}
+
+.revisedVideoPlay .seeMoreBtn {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 35px;
+    top: 50px;
+}
+
+    .revisedVideoPlay .seeMoreBtn a {
+        height: 100%;
+        width: 100%;
+        background: #3195FC;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+
+.seeMoreBtn .btnGreyBg {
+    display: none;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    background: rgba(0,0,0,0.15);
+    height: 40px;
+    border-radius: 5px;
+}
+
+.articleBotBox {
+    position: relative;
+    top: -50px;
+}
+/*查看更多，下载软件 end*/
