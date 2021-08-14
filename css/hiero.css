@@ -268,6 +268,7 @@ object {
 .site-header {
 	padding: 20px 0 0;
 	background-image: url(https://cdn.jsdelivr.net/gh/hhh-yao/hhh-yao.github.io@2.0/网站2.png);
+	height: 600px;
 	}
 .site-branding {
 	float: left;
