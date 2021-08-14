@@ -346,7 +346,7 @@ object {
 #main-navigation .sf-menu {
 	position: absolute;
 	top: 15px;
-  	left: 300px;
+  	left: 500px;
 	background: #060608;
 	}
 #main-navigation .sf-menu > ul > li:after {
