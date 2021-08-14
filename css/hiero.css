@@ -26,6 +26,7 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
+  top: 45px;
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -342,7 +343,8 @@ object {
 	}
 #main-navigation .sf-menu {
 	position: absolute;
-	top: 40px;
+	top: 15px;
+  	left: 200px;
 	background: #060608;
 	}
 #main-navigation .sf-menu > ul > li:after {
