@@ -341,7 +341,7 @@ object {
 	padding: 20px 0 0;
 	}
 #main-navigation .sf-menu {
-	
+	position: absolute;
 	top: 40px;
 	background: #060608;
 	}
