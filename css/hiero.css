@@ -336,6 +336,8 @@ object {
 	}
 
 #main-navigation {
+	position: absolute;
+	top: 40px;
 	clear: both;
 	padding: 20px 0 0;
 	}
