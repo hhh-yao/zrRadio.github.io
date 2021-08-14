@@ -55,8 +55,8 @@ input[type='checkbox'].switch{
             input[type='checkbox'].switch::after {
                 content: '';
                 display: inline-block;
-                width: 1rem;
-                height:1rem;
+                width: 1.7rem;
+                height:1.7rem;
                 border-radius: 50%;
                 background: #fff;
                 box-shadow: 0, 0, 2px, #999;
