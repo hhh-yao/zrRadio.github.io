@@ -21,6 +21,23 @@ body {
 	background: #fff;
 	}
 
+.product-list {
+  margin: 0 -15px;
+  *zoom: 1;
+}
+.product-list:after {
+  content: " ";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  height: 0;
+}
+.product-list .product {
+  width: 25%;
+  padding: 0 15px;
+  float: left;
+  margin-bottom: 30px;
+}
 .page {
   padding: 50px 0;
 }
