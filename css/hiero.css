@@ -20,7 +20,10 @@ body {
 	line-height: 1.8;
 	background: #fff;
 	}
-
+.all {
+  float: right;
+  color: #666a6c;
+}
 .product-list {
   margin: 0 -15px;
   *zoom: 1;
