@@ -31,5 +31,12 @@
 			    <a href="#">悬赏问答</a>
 			  </div>
  </li>
+ function jumurl(){
+            　　window.location.href = '/jp';
+            　　}
+            　　
+            function go(){
+                setTimeout(jumurl, 1000);
+            }    
  /* study/index.html*/
- 修改文件路径
+ 修改css文件路径
